@@ -1,0 +1,14 @@
+<!-- delivery/category_food.html -->
+
+<h1>「{{ category.name }}」の投稿一覧</h1>
+<ul>
+  {% for food in object_list %}
+  {% if user.is_authenticated or food.is_sale %}
+  <li>{% if not food.is_sale %}[下書き] {% endif %}<a href="{% url 'delivery:food_detail' food.id %}">{{ food.title }}</a></li>
+  {% else %}
+  <li>投稿はありません。</li>
+  {% endif %}
+  {% empty %}
+  <li>まだ投稿はありません。</li>
+  {% endfor %}
+</ul>

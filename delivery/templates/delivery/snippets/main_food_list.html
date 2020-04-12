@@ -1,0 +1,27 @@
+{% load static %}
+
+{% for food in object_list %}
+{% if user.is_authenticated or food.is_sale %}
+
+<div class="row" style="width: 80rem;">
+  <div class="col-sm-6 col-md-3">
+    <div class="card img-thumbnail">
+      {% if food.image %}
+      <img class="card-img-top" src="{{ food.image.url }}" alt="{{ food.name }}">
+      {% endif %}
+      <div class="card-body px-2 py-3">
+        {% if food.is_sale %}
+        <h5 class="card-title">{{ food.name }}</h5>
+        <p class="card-text">{{ food.price }} RWF</p>
+        {% endif %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{% endif %}
+
+{% empty %}
+<p>まだ投稿はありません。</p>
+
+{% endfor %}

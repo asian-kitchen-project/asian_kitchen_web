@@ -1,0 +1,13 @@
+/* delivery/static/delivery/css/delivery.css */
+
+[class^="img-flex-"] {
+	margin-bottom: 20px;
+	display: -webkit-flex;
+	display: flex;
+	-webkit-justify-content: space-between;
+	justify-content: space-between;
+}
+
+.img-flex-2 img { width: 49%; }
+.img-flex-3 img { width: 32%; }
+.img-flex-4 img { width: 24%; }
