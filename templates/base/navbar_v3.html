@@ -1,0 +1,20 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light rounded">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar" aria-controls="navbar" aria-expanded="false" aria-label="ナビゲーションの切替">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+
+  <div class="collapse navbar-collapse justify-content-md-center" id="navbar">
+    <ul class="navbar-nav">
+      {% for category in categories|dictsort:"id" %}
+      <li class="nav-item active">
+        <a href="{% url 'delivery:category_food' category.kind %}" class="card-link">
+          <font face="Comic Sans MS" color="green">{{ category.kind }}</font>
+        </a>
+        <span class="badge badge-success badge-pill">
+          <font face="Comic Sans MS" >{{ category.num_foods }}</font></span>　　
+      </li>
+      {% endfor %}
+    </ul>
+  </div>
+</nav>
+<br><br>

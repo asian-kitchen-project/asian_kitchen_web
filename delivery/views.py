@@ -4,6 +4,7 @@ from django.db.models import Count, Q
 from django.http import Http404
 from django.views.generic.detail import DetailView
 from django.views.generic.list import ListView
+from django.shortcuts import get_object_or_404, redirect
 
 from delivery.models import (
     Food,

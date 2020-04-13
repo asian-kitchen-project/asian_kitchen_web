@@ -5,7 +5,7 @@
   <ul class="list-group list-group-flush">
     {% for category in categories|dictsort:"id" %}
     <li class="list-group-item d-flex justify-content-between align-items-center">
-      <a href="{% url 'delivery:category_food' category.slug %}" class="card-link">{{ category.slug }}</a>
+      <a href="{% url 'delivery:category_food' category.kind %}" class="card-link">{{ category.slug }}</a>
       <span class="badge badge-primary badge-pill">{{ category.num_foods }}</span>
     </li>
     {% endfor %}

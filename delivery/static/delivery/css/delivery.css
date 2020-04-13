@@ -1,13 +1,72 @@
 /* delivery/static/delivery/css/delivery.css */
 
-[class^="img-flex-"] {
-	margin-bottom: 20px;
-	display: -webkit-flex;
-	display: flex;
-	-webkit-justify-content: space-between;
-	justify-content: space-between;
+#loading {
+    text-align: center;
+    position: absolute;
+    width: 70px;
+    height: 70px;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    margin: auto;
 }
 
-.img-flex-2 img { width: 49%; }
-.img-flex-3 img { width: 32%; }
-.img-flex-4 img { width: 24%; }
+#loading p {
+    text-align: center;
+    font-size: 70px;
+}
+
+#gallery {
+    margin: 0 auto;
+    overflow: hidden;
+    transition: opacity 0.3s;
+    opacity: 0;
+    max-height: 100vh;
+    box-sizing: border-box;
+}
+
+#gallery.on {
+    opacity: 1;
+    max-height: 100%;
+}
+
+#gallery li {
+    max-width: 300px;
+    padding: 5px;
+    list-style: none;
+}
+
+#gallery li img {
+    max-width: 75%;
+    height: auto;
+    border-radius: 30px;
+}
+
+#gallery li p {
+  position: absolute;/*絶対配置*/
+  color: black;/*文字は白に*/
+  background: rgba(255,255,255,0.25);/*背景色*/
+  padding: 5px 5px;/*文字周りの余白*/
+  top: 5%;/*画像の左上に配置*/
+  left: 15%;
+  margin: 0; /*余計な隙間を除く*/
+  font-weight: 900; /*太字に*/
+  font-size: 1.em;/*サイズ2倍*/
+  font-family: Comic Sans MS;/*Google Font*/
+}
+
+.example img {
+  width: 100%;
+}
+
+figure {
+    text-align:center;
+}
+figcaption{
+    font-weight: 900; /*太字に*/
+    font-size: 1.em;/*サイズ2倍*/
+    font-family: Comic Sans MS;/*Google Font*/
+}
+
