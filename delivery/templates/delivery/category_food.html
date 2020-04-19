@@ -1,5 +1,11 @@
+{% extends "base.html" %}
+{% block title %}{{ block.super }}{% endblock %}
+{% block description %}マイブログです。毎日更新します。{% endblock %}
+
 {% load static %}
 
+{% block content %}
+<br>
 <!-- ロード中に表示する内容 -->
 <div id="loading">
   <p class="btn btn-default btn-lg">
@@ -18,15 +24,4 @@
   </li>
   {% endfor %}
 </ul>
-
-<ul>
-  {% for food in object_list %}
-  {% if user.is_authenticated or food.is_sale %}
-  <li>{% if not food.is_sale %}[下書き] {% endif %}<a href="{% url 'delivery:food_detail' food.id %}">{{ food.title }}</a></li>
-  {% else %}
-  <li>投稿はありません。</li>
-  {% endif %}
-  {% empty %}
-  <li>まだ投稿はありません。</li>
-  {% endfor %}
-</ul>
+{% endblock %}

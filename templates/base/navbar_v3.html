@@ -7,7 +7,7 @@
     <ul class="navbar-nav">
       {% for category in categories|dictsort:"id" %}
       <li class="nav-item active">
-        <a href="{% url 'delivery:category_food' category.kind %}" class="card-link">
+        <a href="{% url 'delivery:category_food' category.slug %}" class="card-link">
           <font face="Comic Sans MS" color="green">{{ category.kind }}</font>
         </a>
         <span class="badge badge-success badge-pill">
