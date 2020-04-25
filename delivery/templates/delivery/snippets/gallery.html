@@ -1,4 +1,5 @@
 {% load static %}
+{% load humanize %}
 
 <!-- ロード中に表示する内容 -->
 <div id="loading">
@@ -10,11 +11,13 @@
 <ul id="gallery">
   {% for food in object_list %}
   <li class="item">
-    <figure>
-      <img src="{{ food.image.url }}">
-      <p>{{ food.name }}</p>
-      <figcaption>{{ food.price }} RWF</figcaption>
-    </figure>
+    <div class="hover11 column">
+      <figure>
+        <img src="{{ food.image.url }}">
+        <p>{{ food.name }}</p>
+        <figcaption>{{ food.price|intcomma:False }} RWF</figcaption>
+      </figure>
+    </div>
   </li>
   {% endfor %}
 </ul>

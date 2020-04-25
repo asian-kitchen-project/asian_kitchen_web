@@ -70,3 +70,15 @@ figcaption{
     font-family: Comic Sans MS;/*Google Font*/
 }
 
+
+/*　マウスを乗せると画像が動く
+───────────────────────── */
+/* Opacity #1 */
+.hover11 figure img {
+	opacity: 1;
+	-webkit-transition: .3s ease-in-out;
+	transition: .3s ease-in-out;
+}
+.hover11 figure:hover img {
+	opacity: .5;
+}
