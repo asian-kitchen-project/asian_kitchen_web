@@ -13,7 +13,9 @@
   <li class="item">
     <div class="hover11 column">
       <figure>
-        <img src="{{ food.image.url }}">
+        <a href="{% url 'delivery:detail_food' food.name %}">
+          <img src="{{ food.image.url }}">
+        </a>
         <p>{{ food.name }}</p>
         <figcaption>{{ food.price|intcomma:False }} RWF</figcaption>
       </figure>

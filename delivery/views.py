@@ -29,3 +29,18 @@ class CategoryFoodView(ListView):
         context = super().get_context_data(**kwargs)
         context['category'] = self.category
         return context
+
+class DetailFoodView(ListView):
+    model = Food
+    template_name = 'delivery/food_detail.html'
+
+    def get_queryset(self):
+        food_name = self.kwargs['food_name']
+        self.food = get_object_or_404(Food, name=food_name)
+        qs = super().get_queryset().filter(name=self.food)
+        return qs
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['food'] = self.food
+        return context

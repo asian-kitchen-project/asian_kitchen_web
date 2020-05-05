@@ -17,7 +17,9 @@
   {% for food in object_list %}
   <li class="item">
     <figure>
-      <img src="{{ food.image.url }}">
+      <a href="{% url 'delivery:detail_food' food.name %}">
+        <img src="{{ food.image.url }}">
+      </a>
       <p>{{ food.name }}</p>
       <figcaption>{{ food.price }} RWF</figcaption>
     </figure>

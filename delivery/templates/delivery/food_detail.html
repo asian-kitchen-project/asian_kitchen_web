@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% load static %}
+{% load bootstrap4 %}
+
+{% block content %}
+<br>
+<ul id="gallery">
+  {% for food in object_list %}
+  <li class="item">
+      <figure>
+        <img src="{{ food.image.url }}">
+        <p>{{ food.name }}</p>
+        <figcaption>{{ food.price }} RWF</figcaption>
+      </figure>
+  </li>
+  {% endfor %}
+</ul>
+
+{% endblock %}
