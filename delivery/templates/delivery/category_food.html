@@ -16,11 +16,15 @@
 <ul id="gallery">
   {% for food in object_list %}
   <li class="item">
-    <figure>
-      <img src="{{ food.image.url }}">
-      <p>{{ food.name }}</p>
-      <figcaption>{{ food.price }} RWF</figcaption>
-    </figure>
+    <div class="hover11 column">
+      <figure>
+        <a href="{% url 'delivery:detail_food' food.name %}">
+          <img src="{{ food.image.url }}">
+        </a>
+        <p>{{ food.name }}</p>
+        <figcaption>{{ food.price }} RWF</figcaption>
+      </figure>
+    </div>
   </li>
   {% endfor %}
 </ul>
