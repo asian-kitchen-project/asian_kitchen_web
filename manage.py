@@ -2,6 +2,9 @@
 import os
 import sys
 
+# fkdsjlfjskadlfjalkdsjlkfaskfjlaksdjfkla
+
+
 if __name__ == '__main__':
     os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'asian_kitchen_web.settings')
     try:
