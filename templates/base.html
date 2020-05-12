@@ -13,13 +13,34 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/material-design-iconic-font/2.2.0/css/material-design-iconic-font.min.css">
     <link rel="stylesheet" href="{% static 'delivery/css/delivery.css' %}">
+    <!-- カートのCSSうまく連携できないので -->
+    <style type="text/css">
+      .cartbottun {
+        position: fixed;
+        right: 20px;
+        top: 10px;
+      }
+      .cartbottun img {
+        width: 30px;
+        height: auto;
+      }
+      .cartbottun img:hover {
+        opacity: 0.5;
+      }
+    </style>　
   </head>
   <body>
+    <div class="cartbottun">
+      <a href="/">
+        <img src="{% static 'delivery/img/cartbottun.png' %}" alt="cartbottun">
+      </a>
+    </div>
     <a href="/">
     <center><img src="{% static 'delivery/img/logo.png' %}"
                  width="240" height=auto
                  vspace="80"></center>
     </a>
+
     {% include "base/navbar_v3.html" %}
 
     {% block content %}

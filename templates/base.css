@@ -1,0 +1,12 @@
+.cartbottun {
+  position: fixed;
+  right: 20px;
+  top: 10px;
+}
+.cartbottun img {
+  width: 30px;
+  height: auto;
+}
+.cartbottun img:hover {
+  opacity: 0.5;
+}
